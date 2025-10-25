@@ -1,0 +1,19 @@
+# Project directories
+/bin/
+/doc/
+src/emobility/bin/
+src/emobility/bills/
+src/emobility/reports
+
+# Logs
+*.log
+*.tmp
+*.bak
+*.swp
+
+# JARs
+*.jar
+
+# OS specific
+.DS_Store
+Thumbs.db
