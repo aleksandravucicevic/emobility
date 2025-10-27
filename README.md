@@ -8,16 +8,16 @@ i novoa baterije prevoznih sredstava, kao i izradu finansijskih izvještaja na o
 * Simulacija kretanja prevoznih sredstava po mapi dimenzija 20×20, pri čemu se prevozna sredstva kreću pravolinijski - prvo horizontalno, a zatim vertikalno
 * Grafički interfejs (implementiran u Swing-u) sa više ekrana:
   * početni ekran - služi za navigaciju kroz aplikaciju
-  * mapa - pregled užeg i šireg dijela grada, te praćenje kretanja vozila od iznajmljivanja do razduživanja
   * tabela vozila - prikaz svih registrovanih automobila, bicikala i trotineta
+  * mapa - pregled užeg i šireg dijela grada, te praćenje kretanja vozila od iznajmljivanja do razduživanja
   * spisak kvarova - evidencija vremena kvara, vozila na kom je kvar nastao, te opisa kvara
-  * rezultati poslovanja - sumarni i dnevni finansijski izvještaji, te evidencija vozila (za svaku od vrstu) koja su pričinila najveću štetu u poslovanju.
+  * rezultati poslovanja - sumarni i dnevni finansijski izvještaji, te evidencija vozila (za svaku vrstu) koja su pričinila najveću štetu u poslovanju.
 * Automatsko generisanje računa za svako iznajmljivanje u _.txt_ formatu
 * Izračunavanje popusta, promocija, troškova na popravak kvarova i troškova održavanja
 * Serijalizacija i deserijalizacija podataka o prevoznim sredstvima koja su napravila najveći gubitak.
 
 ## Izvještaji
-Sumarni izvještaj uključuje:
+**Sumarni izvještaj** uključuje:
 1. ukupan prihod [suma svih iznosa za plaćanje na svim računima]
 2. ukupan popust [suma svih iznosa popusta sa svih računa]
 3. ukupnan iznos promocija [suma vrijednosti svih promocija sa svih računa]
@@ -27,7 +27,11 @@ Sumarni izvještaj uključuje:
 7. ukupne troškove kompanije [20% ukupnog prihoda]
 8. ukupan porez [(ukupan prihod - ukupan iznos za održavanje - ukupan iznos za popravke kvarova - troškovi kompanije) * 10% ]
 
-Dnevni izvještaj prikazuje stavke 1-6 grupisane po datumu.
+**Dnevni izvještaj** prikazuje stavke 1-6 grupisane po datumu.
+
+Dodatni izvještaj je **izvještaj o prevoznim sredstvima koja su donijela najviše gubitaka za svaku vrstu**.  
+Ovi podaci se pojedinačno serijalizuju u binarne fajlove, pri čemu se čuvaju objekat prevoznog sredstva sa svim poljima i iznos u određeni folder. Zatim se, kako bi se dobijeni rezultati prikazali na ekranu, vrši deserijalizuja ovih podataka.
+
 
 ## Izgled aplikacije
 <p align="center">
@@ -77,7 +81,7 @@ Dnevni izvještaj prikazuje stavke 1-6 grupisane po datumu.
 <em>Ekran sa izvještajima</em>
 </p>
 
-## Napomena
+## Ključne oblasti
 Ovaj projektni zadatak podrazumijeva:
 * rad sa nitima
 * rad sa properties fajlovima
